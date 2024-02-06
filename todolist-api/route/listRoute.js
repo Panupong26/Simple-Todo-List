@@ -6,14 +6,13 @@ router.use(express.json());
 router.use(express.urlencoded({extended: false}));
 const passport = require('passport');
 const { session } = require('passport');
+const authenticate = require('../midlewares/authenticate');
 
-const authentication = passport.authenticate('Jwt', {session : false});
 
-
-router.get('/getlist', authentication, list.getList);
-router.post('/add', authentication, list.postList);
-router.patch('/edit', authentication, list.updateList);
-router.delete('/delete', authentication, list.deleteList);
+router.get('/getlist', authenticate, list.getList);
+router.post('/add', authenticate, list.postList);
+router.patch('/edit', authenticate, list.updateList);
+router.delete('/delete', authenticate, list.deleteList);
 
 
 module.exports = router;

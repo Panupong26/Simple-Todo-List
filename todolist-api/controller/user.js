@@ -36,7 +36,7 @@ const login = async (req, res) => {
         }
     
         const payload = {
-            id : targetUser.id,
+            username : targetUser.username,
         };
     
         const token = jwt.sign(payload, 'cc14todoList', {expiresIn : 1800});

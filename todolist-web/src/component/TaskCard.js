@@ -39,7 +39,7 @@ export default function TaskCard({ data, getList }) {
             setAllow(false);
         }
 
-    }, [input])
+    }, [input, data.date, data.text, data.time])
     
 
     return <>

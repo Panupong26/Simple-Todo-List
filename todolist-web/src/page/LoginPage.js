@@ -30,6 +30,7 @@ function LoginPage() {
             <input style={{margin: '5px'}} placeholder="username" value={userData.username} onChange={e => setUserData({...userData,username : e.target.value})}></input>
             <input style={{margin: '5px'}} placeholder="password" value={userData.password} onChange={e => setUserData({...userData,password : e.target.value})}></input>
             <button style={{margin: '5px'}} onClick={loginSubmit}>login</button>
+            <button style={{margin: '5px'}} onClick={() => window.location.pathname = 'keycloaklogin'}>login by Keycloak</button>
             <Link to={'/register'}><button style={{margin: '5px'}} >Register</button></Link>
           </div>
         </div>

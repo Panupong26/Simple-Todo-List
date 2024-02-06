@@ -9,7 +9,7 @@ function ProfilePage() {
     const [profile, setProfile] = useState();
 
     const loadUser = async () => {
-        const res = await axios({method: 'get', url: 'http://localhost:8000/user/profile'});
+        const res = await axios({method: 'get', url: 'http://localhost:8000/user/profile'})
         setProfile({...res.data});
     }
     
