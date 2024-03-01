@@ -5,9 +5,9 @@ import { useEffect } from "react";
 
 
 const keycloakConfig = {
-    url: 'https://oidc.cams.dev',
-    realm: 'dot',
-    clientId: 'test',
+    url: 'https://oidc.cams.dev/',
+    realm: 'dot-officer',
+    clientId: 'dot-officer',
   };
   
 const keycloak = new Keycloak(keycloakConfig);
@@ -22,7 +22,7 @@ export default function KeycloakLoginPage() {
         
         keycloak.init({ onLoad: 'login-required' }).then((authenticated) => {
             if(authenticated) {
-                console.log(keycloak.idToken)
+                console.log(keycloak.accessToken)
                 localStorage.setToken(keycloak.idToken);   
                 //window.location.pathname = "profile";
             }
